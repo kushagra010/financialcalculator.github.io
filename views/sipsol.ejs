@@ -1,0 +1,16 @@
+<% pm = Math.pow((1+(info.ir/100)), 1/12)-1 %>
+<% py = Math.pow((1+pm), 12*info.years) %>
+<% fv = (info.investment)*((py-1)/pm)*(1+pm) %>
+<% i = (info.investment)*(info.years)*12 %>
+<% e = fv-i %>
+
+
+<h1>SIP Amount: Rs.<%= info.investment %></h1>
+<h1>Expected Interest Rate: <%= info.ir %></h1>
+<h1>Time Duration: <%= info.years %> Years</h1>
+<h1>The future value of your SIP based on investment will be: Rs.<%= Math.round(fv) %></h1>
+<h1>Your Investment: Rs.<%= Math.round(i) %></h1>
+<h1>Your Earnings: Rs.<%= Math.round(e) %></h1>
+
+<a href="/sip"><button>Back</button></a>
+<a href="/"><button>Back To Home Page</button></a>

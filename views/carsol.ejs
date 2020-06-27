@@ -1,0 +1,17 @@
+<% cf = info.cost*(Math.pow((1+(info.ir)/100),info.years)); %>
+<% ei = info.investment*(Math.pow((1+(info.ror)/100),info.years)); %>
+<% cl = (info.loan/100)*cf %>
+<% diff = cf-ei-cl %>
+<% pm = Math.pow((1+(info.ror)/100), 1/12)-1 %>
+<% py = Math.pow((1+pm), 12*info.years) %>
+<% ms = (diff*pm/(1+pm))/(py-1) %>
+
+
+<h1>Years Left: <%= info.years %> years</h1>
+<h1>Cost in future terms: Rs.<%= Math.round(cf) %></h1>
+<h1>Existing Investment: Rs.<%= Math.round(ei) %></h1>
+<h1>Car loan funding: Rs. <%= Math.round(cl) %></h1>
+<h1>Monthly saving from today: Rs.<%= Math.round(ms) %></h1>
+
+<a href="/car"><button>Back</button></a>
+<a href="/"><button>Back To Home Page</button></a>
